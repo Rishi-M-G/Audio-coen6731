@@ -33,7 +33,7 @@ public class EmbeddingJettyStarter {
 
         Server server = new Server(threadPool);
         ServerConnector connector = new ServerConnector(server);
-        connector.setHost("155.248.234.61");
+//        connector.setHost("155.248.234.61");
         connector.setPort(port);
         server.setConnectors(new Connector[] {connector});
         
