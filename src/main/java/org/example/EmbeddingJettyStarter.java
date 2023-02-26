@@ -20,19 +20,20 @@ public class EmbeddingJettyStarter {
 
     public static void main(String[] args) throws Exception
     {
-         
+         //155.248.234.61
         
 
         int maxThreads = 100;
         int minThreads = 10;
         int idleTimeout = 120;
-        int port = 9090;
+        int port = 8080;
 
         QueuedThreadPool threadPool = 
         		new QueuedThreadPool(maxThreads, minThreads, idleTimeout);
 
         Server server = new Server(threadPool);
         ServerConnector connector = new ServerConnector(server);
+        connector.setHost("155.248.234.61");
         connector.setPort(port);
         server.setConnectors(new Connector[] {connector});
         

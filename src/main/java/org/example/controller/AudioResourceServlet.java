@@ -48,6 +48,7 @@ public class AudioResourceServlet extends HttpServlet{
 		audioDB.put("I Love Me",song2);
 	}
 	
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String track_title = request.getParameter("track_title");
 		Audio artist_name = audioDB.get(track_title);
@@ -64,5 +65,8 @@ public class AudioResourceServlet extends HttpServlet{
 		out.flush();
 	}
 	
-	
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
 }
