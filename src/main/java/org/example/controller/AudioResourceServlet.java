@@ -51,8 +51,8 @@ public class AudioResourceServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String track_title = request.getParameter("track_title");
-		Audio artist_name = audioDB.get(track_title);
-		
+		Audio song1 = audioDB.get(track_title);
+		String artist_name = song1.getArtistName();
 	
 		
 		
@@ -64,7 +64,7 @@ public class AudioResourceServlet extends HttpServlet{
 		response.setCharacterEncoding("UTF-8");
 		
 		out.println("GET RESPONSE IN JSON - all elements " + element.toString());
-		out.println("RESPONSE IN JSON - Single Element:"+gson.toJson(artist_name)+gson.toJson(element));
+		out.println("RESPONSE IN JSON - Single Element:"+gson.toJson(artist_name));
 		out.flush();
 		
 		
