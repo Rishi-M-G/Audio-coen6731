@@ -20,7 +20,6 @@ public class EmbeddingJettyStarter {
 
     public static void main(String[] args) throws Exception
     {
-         //155.248.234.61
         
 
         int maxThreads = 100;
@@ -33,7 +32,6 @@ public class EmbeddingJettyStarter {
 
         Server server = new Server(threadPool);
         ServerConnector connector = new ServerConnector(server);
-//        connector.setHost("155.248.234.61");
         connector.setPort(port);
         server.setConnectors(new Connector[] {connector});
         
@@ -48,16 +46,13 @@ public class EmbeddingJettyStarter {
         System.err.println("Using BaseResource: " + webResourceBase);
         WebAppContext context = new WebAppContext();
         context.setBaseResource(Resource.newResource(webResourceBase));
-        context.setContextPath(contextPath);
+        context.setContextPath("/coen6317");
         context.setParentLoaderPriority(true);
         
         /*
          * different handlers can be added. for example the authentication. 
          */
         server.setHandler(context);
-        
-        
-        
         server.start();
         server.join();
     }
