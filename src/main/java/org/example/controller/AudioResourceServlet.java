@@ -53,7 +53,7 @@ public class AudioResourceServlet extends HttpServlet{
 		String track_title = request.getParameter("track_title");
 		Audio audio = audioDB.get(track_title);
 		
-		track_title = audio.getTrackTitle();
+//		track_title = audio.getTrackTitle();
 		String artist_name = audio.getArtistName();
 		
 		
